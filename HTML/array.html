@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            height: auto;
+            background-color: #e7dede;
+            padding: 10%;
+        }
+        p{
+            font-size: medium;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>The Length property</h2>
+    <p>The length property returns the length of a string.</p>
+<p id="demo"></p>
+
+<h2>Array to String</h2>
+<p id="demo1"></p>
+<h2>Get array's element</h2>
+<p id="demo2" ></p><small>using []</small>
+<p id="demo3"></p><small>using at()</small>
+
+
+    </div>        
+</body>
+<script>
+    const Fruits = ['Apple', 'Banana', 'Grapes', 'Peach'];
+    document.getElementById("demo").innerHTML = Fruits.length;
+    document.getElementById("demo1").innerHTML = Fruits.toString();
+    document.getElementById("demo2").innerHTML = Fruits[1];
+    let fruit = Fruits.at(3);
+    document.getElementById("demo3").innerHTML = fruit;
+</script>
+</html>

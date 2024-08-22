@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"] {
+            width: 60%;
+            border: 1.5px solid rgb(8, 8, 8);
+            border-radius: 10px;
+            padding: 4px;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <form action="post">
+        <div>   
+            <label for="fname">First Name :</label>&nbsp;&nbsp;
+            <input type="text" id="fname" name="fname" pattern="[A-Za-z]+" minlength="3" maxlength="10"><br><br>
+            <label for="lname" >Last Name : </label>&nbsp;
+            <input type="text" id="lname" name="lname" pattern="[A-Za-z]+" minlength="3" maxlength="10"><br><br>
+        </div>
+        <div>
+            <span>Gender : </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="female">Female</label>
+            <input type="radio" id="female" name="female" value="Female">
+            <label for="male">Male</label>
+            <input type="radio" id="male" name="male" value="Male">
+        </div><br>
+        <div>
+            <label for="father_name">Father's Name :</label>&nbsp;&nbsp;
+            <input type="text" id="father_name" name="father_name" pattern="[A-Za-z]+" minlength="3" maxlength="20"><br><br>
+            <label for="mother_name">Mother's Name :</label>&nbsp
+            <input type="text" name="mother_name" id="mother_name" pattern="[A-Za-z]+" minlength="3" maxlength="20">
+        </div>
+        <div></div>
+        <div></div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.box-container {
+    display: flex;
+    /* flex-flow: column; */
+    /* flex-flow: column-reverse; */
+    /* flex-flow:row-reverse; */
+    flex-wrap: wrap;
+
+}
+.box {
+    color: blue;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+    height:50px;
+    text-align: center;
+}

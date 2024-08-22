@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: black;
+            background-color: aquamarine;
+
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        input[type='text'] {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!-- input name using text type -->
+        <label for="fname">First Name</label><br>
+        <input type="text" id="fname" name="fname" pattern="[A-Za-z]+" minlength="3" maxlength="10"><br><br>
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname" name="lname" pattern="[A-Za-z]+" minlength="2" maxlength="10"><br><br>
+        <!-- make single select using select element -->
+        <label for="courses">Choose one course</label>
+        <select name="courses" id="courses">
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="fullstack">Fullstack Developer</option>
+            </select><br><br>
+        </select>
+        <label for="flowers">Favourite Flowers</label>
+        <input list="flowers" name="flowers">
+        <datalist id="flowers">
+            <option value="Rose"></option>
+            <option value="Lily"></option>
+            <option value="Sunflower"></option>
+            <option value="marygold"></option>
+            
+        </datalist>
+        <p>Choose your Favorite</p>
+        <!-- //checkbox using checkbox type -->
+        <input type="checkbox" id="html" name="html" value="HTML">
+        <lable for="html">HTML</lable>
+        <input type="checkbox" id="css" name="css" value="CSS">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="javascript" name="javascript" value="javascript">
+        <label for="javascript">JavaScript</label>
+        <input type="checkbox" id="java" name="java" value="Java">
+        <label for="java">Java</label>
+        <input type="checkbox" id="python" name="python" value="Python">
+        <label for="python">Python</label><br><br>
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10"><br><br>
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" name="volume" min="1" max="100"><br><br>
+        <p>Select Your screen view</p>
+        <!-- //radio using radio type -->
+        <input type="radio" id="light" name="theme" value="Light">
+        <label for="light">Light</label>
+        <input type="radio" id="dark" name="theme" value="Dark">
+        <label for="dark">Dark</label><br><br>
+        <!-- //dob using date type -->
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="date of birth"><br><br>
+        <label for="bdaymonth">Birthday(month and year)</label>
+        <!-- //month and year using month type -->
+        <input type="month" id="bdaymonth" name="bdaymonth" min="1930-01" max="2000-01"><br><br>
+        <!-- //Upload file using file type -->
+        <label for="photo">Upload Photo</label>
+        <input type="file" id="photo" name="photo"><br><br>
+        <!-- //take phone number using tel type -->
+        <label for="phone">Enter Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"  title="Enter 10 digit phone number">
+        <small>Format: 1234567890</small><br><br>
+        <!-- taking url -->
+         <label for="url">Enter URL</label>
+         <input type="url" value="" placeholder="https://www.example.com" pattern="https://.*" ><br>
+        <!-- //email using email type -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="Email" title="Enter a valid email address" required><br><br>
+        <!-- //password using password type -->
+        <input type="password" id="pwd" name="pwd" value="password"  minlength="5" maxlength="10">
+        <label for="pwd">Password</label>
+        <input type="submit" value="Submit">
+        </form>
+
+</body>
+</html>

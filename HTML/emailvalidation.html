@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: black;
+            font-size: large;
+        }
+        input[type='email'] {
+            border: 1px solid blue;
+            padding: 10px;
+
+        }
+        input[type='email']:focus{
+            border: 1px solid red;
+        }
+        input[type='submit'] {
+            font-weight: bold;
+            border: 2px solid skyblue;
+            padding: 10px;
+            color: rgb(5, 5, 134);
+            background: lightcyan;
+        }
+        form{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="post">
+        <h2>Email Validation</h2>
+        <input type="email" value="" placeholder="name@email.com" required>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
