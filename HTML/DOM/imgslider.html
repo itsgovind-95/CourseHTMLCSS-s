@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div class="slider">
+    <img src="" alt="">
+    <button id="next"> > </button>
+    <button id="prev"> < </button>
+   </div>
+</body>
+<script>
+    let imageArray = [
+        "https://cdn.pixabay.com/photo/2020/02/10/13/58/flowers-4836548_1280.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx8ja5dZd-klGRC0MZYH70aWQyCi0keK_9Qg&s",
+        "https://cdn.pixabay.com/photo/2016/09/29/13/08/planet-1702788_1280.jpg",
+        "https://cdn.pixabay.com/photo/2018/03/29/18/39/drops-3273161_1280.jpg",
+        "https://cdn.pixabay.com/photo/2019/10/22/13/54/abstract-4568803_1280.jpg",
+        "https://cdn.pixabay.com/photo/2023/04/09/06/18/explosion-7910812_1280.jpg",
+        "https://cdn.pixabay.com/photo/2023/01/11/18/26/bird-7712475_1280.jpg",
+        "https://pixabay.com/static/frontend/3c346409d336d5f09a7f.svg",
+        "https://cdn.pixabay.com/photo/2021/04/25/04/11/plants-6205510_1280.jpg"
+    ];
+
+    let image = document.querySelector("img");
+    let nextButton = document.querySelector("#next");
+    let prevButton = document.querySelector("#prev");
+    let imageIndex = 0;
+
+    function showImage(index) {
+        image.setAttribute('src', imageArray[index]);
+    }
+
+    function nextImage() {
+        imageIndex++;
+        if (imageIndex > imageArray.length - 1) {
+            imageIndex = 0;
+        }
+        showImage(imageIndex);
+    }
+
+    function prevImage() {
+        imageIndex--;
+        if (imageIndex < 0) {
+            imageIndex = imageArray.length - 1;
+        }
+        showImage(imageIndex);
+    }
+
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
+
+    // Automatically change the image every 3 seconds
+    setInterval(nextImage, 1000);
+
+    // Initialize the slider with the first image
+    showImage(imageIndex);
+</script>
+</html>

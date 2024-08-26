@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        .container div {
+            border: 2px solid teal ;
+            margin: 10px;
+            padding: 5px;
+            box-shadow: 
+                        inset 5px 5px 10px #000000, 
+                        inset -5px -5px 10px blue;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    
+</body>
+<script>
+    let products = [
+    { name: "Wireless Mouse", price: 25.99, seller: "TechStore" },
+    { name: "Bluetooth Headphones", price: 59.99, seller: "SoundWave" },
+    { name: "Laptop Stand", price: 29.99, seller: "OfficeGear" },
+    { name: "USB-C Hub", price: 19.99, seller: "GadgetWorld" },
+    { name: "Mechanical Keyboard", price: 89.99, seller: "KeyMasters" },
+    { name: "Smartphone Holder", price: 15.99, seller: "MobileEssentials" },
+    { name: "Portable Charger", price: 39.99, seller: "PowerUp" },
+    { name: "LED Desk Lamp", price: 22.99, seller: "BrightLights" },
+    { name: "Noise Cancelling Earbuds", price: 49.99, seller: "SoundWave" },
+    { name: "Wireless Charger", price: 27.99, seller: "TechStore" },
+    { name: "Fitness Tracker", price: 45.99, seller: "FitLife" },
+    { name: "Smartwatch", price: 129.99, seller: "GadgetWorld" },
+    { name: "4K Monitor", price: 299.99, seller: "ScreenMasters" },
+    { name: "Gaming Chair", price: 199.99, seller: "ComfortZone" },
+    { name: "External Hard Drive", price: 79.99, seller: "DataSafe" },
+    { name: "Webcam", price: 49.99, seller: "TechStore" },
+    { name: "Graphic Tablet", price: 69.99, seller: "CreativeTools" },
+    { name: "Bluetooth Speaker", price: 39.99, seller: "SoundWave" },
+    { name: "Smart Light Bulb", price: 12.99, seller: "BrightLights" },
+    { name: "Electric Kettle", price: 29.99, seller: "HomeEssentials" },
+    { name: "Air Purifier", price: 99.99, seller: "CleanAir" },
+    { name: "Robot Vacuum", price: 249.99, seller: "HomeEssentials" },
+    { name: "Instant Pot", price: 89.99, seller: "KitchenPro" },
+    { name: "Espresso Machine", price: 149.99, seller: "CoffeeLovers" },
+    { name: "Blender", price: 49.99, seller: "KitchenPro" },
+    { name: "Smart Thermostat", price: 129.99, seller: "HomeTech" },
+    { name: "Security Camera", price: 59.99, seller: "SafeHome" },
+    { name: "Electric Toothbrush", price: 39.99, seller: "DentalCare" },
+    { name: "Hair Dryer", price: 29.99, seller: "BeautyEssentials" },
+    { name: "Electric Shaver", price: 49.99, seller: "GroomingPro" },
+    { name: "Yoga Mat", price: 19.99, seller: "FitLife" },
+    { name: "Dumbbell Set", price: 59.99, seller: "FitLife" },
+    { name: "Treadmill", price: 499.99, seller: "FitnessGear" },
+    { name: "Exercise Bike", price: 299.99, seller: "FitnessGear" },
+    { name: "Resistance Bands", price: 15.99, seller: "FitLife" },
+    { name: "Foam Roller", price: 22.99, seller: "FitLife" },
+    { name: "Camping Tent", price: 89.99, seller: "OutdoorAdventure" },
+    { name: "Sleeping Bag", price: 49.99, seller: "OutdoorAdventure" },
+    { name: "Hiking Backpack", price: 79.99, seller: "OutdoorAdventure" },
+    { name: "Portable Grill", price: 59.99, seller: "OutdoorAdventure" },
+    { name: "Binoculars", price: 39.99, seller: "OutdoorAdventure" }
+];
+
+let container = document.querySelector(".container");
+
+products.map((element) =>{
+    let card = document.createElement('div');
+    let productName = document.createElement('h1');
+    let productPrice =document.createElement('h2');
+    let seller = document.createElement('p');
+
+    card.setAttribute('class', 'childCont');
+
+    productName.textContent = element.name;
+    productPrice.textContent = element.price;
+    seller.textContent = element.seller;
+    
+    card.append(productName, productPrice, seller);
+    container.append(card);
+})
+</script>
+</html>

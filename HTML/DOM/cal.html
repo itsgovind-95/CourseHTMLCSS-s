@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #keyNumbers > button {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+        }
+        #operators > button {
+            padding: 5px;
+            width: 50px;
+            height: 40px;
+        }
+        #equal > button {
+            padding: 10px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="display"></h1>
+    <div id="keyNumbers">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+    </div> <br>
+    <div id="operators">
+        <button>+</button>
+        <button>-</button>
+        <button>*</button>
+        <button>/</button>
+    </div><br>
+    <div id="equal">
+        <button>=</button>
+    </div>
+    
+</body>
+<script>
+    let keypad = document.querySelectorAll("#keyNumbers button");
+    let operators = document.querySelectorAll("#operators button");
+    let result = document.querySelector("#equal button");
+    let show = document.getElementById("display");
+
+    let firstNumber = '';
+    let secondNumber = '';
+    let operatorValue = '';
+
+    keypad.forEach(button => {
+        button.addEventListener('click', function() {
+            if (operatorValue === '') {
+                firstNumber += this.textContent;
+                show.textContent = firstNumber;
+            } else {
+                secondNumber += this.textContent;
+                show.textContent = secondNumber;
+            }
+        });
+    });
+
+    operators.forEach(button => {
+        button.addEventListener('click', function() {
+            operatorValue = this.textContent;
+        });
+    });
+
+    result.addEventListener('click', function() {
+        if (firstNumber !== '' && secondNumber !== '' && operatorValue !== '') {
+            let calculation = eval(`${firstNumber} ${operatorValue} ${secondNumber}`);
+            show.textContent = calculation;
+            firstNumber = calculation;
+            secondNumber = '';
+            operatorValue = '';
+        }
+    });
+</script>
+</html>

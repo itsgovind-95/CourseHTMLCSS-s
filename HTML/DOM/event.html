@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <button id="btn1">Click me</button>
+    <button class="btn2">Click me</button>
+    
+</body>
+<script>
+    let click1 = document.getElementById("btn1");
+    let head = document.getElementById("h1");
+    click1.addEventListener('click', function(){
+        head.textContent = "You clicked me! by ID";
+    });
+
+    let click2 = document.getElementsByClassName('btn2');
+    for(let i =0; i < click2.length; i++){
+        click2[i].addEventListener('click', function(){
+            head.textContent = "You clicked me! by Class";
+        })}
+</script>
+</html>

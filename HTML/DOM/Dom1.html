@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #change {
+            background-color: aquamarine;
+            border-radius: 5px;
+            padding: 5px;
+            width: 20%;
+        }
+        #original {
+            background-color: sandybrown;
+            border-radius: 5px;
+            padding: 5px;
+            width: 50%;
+        }
+        h1 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">I'm Heading one</h1>
+    <button id="change" onclick="change()">Change</button>
+    <button id="original" onclick="original()" >Get Back to original</button>
+</body>
+<script>
+    let headingOne = document. getElementById("h1");
+    function change() {
+        headingOne.textContent = "I'm Heading two";
+    }
+    function original(){
+        headingOne.textContent = "I'm Heading one";
+    }
+</script>
+</html>
