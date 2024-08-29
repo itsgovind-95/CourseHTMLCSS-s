@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart</title>
+    <style>
+        /* Style your product and cart elements here */
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cart {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="product">
+        <img src="https://th.bing.com/th/id/OIP.ee9Zxr40mI3lk52iWuvMxAHaE8?w=279&h=186&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="Product Image">
+        <h3>Product Name</h3>
+        <p>Price: $19.99</p>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <!-- Repeat the above product block for other items -->
+
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <p>Total: <span id="total-price">$0.00</span></p>
+    </div>
+
+    <script>
+        // Get product elements
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const cartItemsList = document.getElementById('cart-items');
+const totalPriceElement = document.getElementById('total-price');
+
+// Initialize cart
+const cart = [];
+
+// Add event listeners to "Add to Cart" buttons
+addToCartButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const productName = 'Product ' + (index + 1);
+        const productPrice = 19.99; // Set the actual price here
+
+        // Add item to cart
+        cart.push({ name: productName, price: productPrice });
+
+        // Update cart UI
+        updateCartUI();
+    });
+});
+
+// Update cart UI
+function updateCartUI() {
+    cartItemsList.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsList.appendChild(listItem);
+        total += item.price;
+    });
+
+    totalPriceElement.textContent = `$${total.toFixed(2)}`;
+}
+
+    </script>
+</body>
+</html>
