@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //set items
+    // localStorage.setItem('name','Govind');
+    // localStorage.setItem('team','developer')
+    localStorage.setItem('age',JSON.stringify(25));
+    
+
+    // let user = {
+    //     name : 'Govind',
+    //     role : 'developer'
+
+    // }
+    
+    // localStorage.setItem('user', JSON.stringify(user));
+
+    //get items
+    // let userdata = localStorage.getItem('user');
+    // console.log(userdata);
+    // console.log('type of user :',typeof user);
+    // let name = localStorage.getItem('name');
+    // let team = localStorage.getItem('team');
+    let age = localStorage.getItem('age')
+    // console.log(name);
+    // console.log("type of name : ",typeof name)
+    // console.log(team);
+    // console.log("type of team :",typeof team);
+    console.log(age);
+    console.log("type of age :",typeof age);
+
+</script>
+</html>

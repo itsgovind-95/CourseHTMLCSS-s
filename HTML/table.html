@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+           border-collapse: collapse;
+           /* border-collapse: separate; */
+           border: 1px solid salmon;
+           width: 100%;
+        }
+        thead {
+            border-bottom: 5px solid skyblue;
+        } 
+        tbody {
+            background-color: white;
+        }
+        td, th{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: lightgrey;
+        }
+        tbody tr:nth-child(even){
+            background-color: aliceblue;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: bisque;
+        }
+        caption {
+            font-weight: bold;
+            font-weight: 30px;
+            margin-bottom: 10px;
+        }
+        @media only screen and (max-width :768px) {
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Employee Information</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>James</td>
+                <td>DevOps</td>
+                <td>US</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Tester</td>
+                <td>Canada</td>
+            </tr>
+            <tr><td>Govind</td>
+                <td>Web Developer</td>
+                <td>India</td>
+            </tr>
+            <tr>
+                <td>Veena</td>
+                <td>iOS Developer</td>
+                <td>India</td>
+            </tr>
+            <tr>
+                <td>Shivansh</td>
+                <td>Security Engineer</td>
+                <td>India</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

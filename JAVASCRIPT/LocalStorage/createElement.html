@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"ct>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .header {
+            overflow: hidden;
+            position: sticky;       
+            top: 0px; /* Ensure it sticks to the top */
+            padding: 0.5em 0;
+            border: 1px solid #a2a2a2;
+            background-color: #f4f4f4;
+            box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+            border-radius: 5px;
+        }
+        .main-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .main-nav :nth-child(2) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        .main-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* a {
+            text-decoration: none;
+            color:  #34495e;
+        } */
+        .main-nav a {
+            text-decoration: none;
+            color:  #34495e;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            text-align: center;
+            display: block;
+            color: #34495e;
+            font-size: 20px;
+        }
+        .main-nav a:hover {
+            color: #718daa;
+        }
+        .header ul img {
+            width: 50px;
+            height: 50px;
+        }
+        #product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  justify-items: center;
+  padding-top: 10px;
+  overflow: auto; /* Add this */
+  height: 500px; /* Optional: set a fixed height */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  margin: 40px;
+  padding-left: 50px;
+  width: 300px;
+  height: 400px;
+  box-shadow: rgba(5, 6, 6, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  margin: 20px; /* Add some margin to create space between boxes */
+}
+        .image {
+            filter: grayscale(100%);
+            width: 90%;
+            height: 50%;
+            filter: brightness(100%);
+        }
+        .image:hover {
+            filter: drop-shadow(8px 8px 10px gray);
+        }
+        .cart img {
+            width: 10px;
+            height: 10px;
+        }
+        .cart :hover{
+            color: #053b72;
+            filter: drop-shadow(8px 8px 10px gray);
+        }
+        .add-to-cart {
+            width: 50%;
+            height: 40px;
+            font-size: 16px;
+            background-color: #40c1eb;
+            color: hwb(0 5% 7%);
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            filter: drop-shadow(8px 8px 10px gray);
+        }
+        
+    </style>
+    
+    
+</head> 
+<body>
+    <header class="header" id="sticky">
+        <nav class="main-nav">
+            <ul>
+                <img src="./products/itechlogo.jpg" alt="itech-logo" class="logo">
+            </ul>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#category">Category</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="signin">Sign in</a></li>
+                <li><a href="./cart.html" class="cart"><img src="./products/cartIcon.png" alt="cart-icon"></a></li>
+            </ul>
+        </nav>
+    </header>
+       
+   
+    <div id="product-list"></div>    
+</body>
+<script>
+    let products = [
+  { name: "Wireless Mouse", price: 25.99, rating: 4.5, src: "./products/mouse.jpg" },
+  { name: "Mechanical Keyboard", price: 89.99, rating: 4.7, src: "./products/keyboard.png" },
+  { name: "USB-C Hub", price: 34.99, rating: 4.3, src: "./products/usbhub.png" },
+  { name: "Gaming Monitor", price: 299.99, rating: 4.8, src: "./products/gamingMonitor.png" },
+  { name: "Bluetooth Speaker", price: 49.99, rating: 4.4, src: "./products/speaker.jpg" },
+  { name: "External Hard Drive", price: 79.99, rating: 4.6, src: "./products/harddrive.jpg" },
+  { name: "Webcam", price: 59.99, rating: 4.2, src: "./products/webcam.jpg" },
+  { name: "Laptop Stand", price: 29.99, rating: 4.5, src: "./products/lapStand.jpg" },
+  { name: "Noise Cancelling Headphones", price: 199.99, rating: 4.7, src: "./products/headphone.jpg" },
+  { name: "Smartphone Charger", price: 19.99, rating: 4.1, src: "./products/charger.jpg" }
+];
+
+let productList = document.getElementById("product-list");
+let cart = [];
+
+
+products.map(product =>{
+    let image = document.createElement('img')
+    let addtocart = document.createElement('button')
+    let box = document.createElement('div');
+    let name = document.createElement('h2');
+    let price = document.createElement('h3');
+    let rating =document.createElement('p')
+
+    image.className='image'
+    addtocart.className='add-to-cart'
+    image.src=product.src;
+    box.setAttribute('class','box');
+    // name.setAttribute('class', 'head2');
+    // price.setAttribute('class','head3')
+
+    name.innerText =`${product.name}`;
+    addtocart.innerText = "Add to cart"
+    addtocart.addEventListener('click',()=>{
+        cart.push(product);
+        console.log(`Added ${product.name} to cart`);
+    })
+    price.innerText = ` Price : ${product.price}`;
+    rating.innerText = `Rating :${product.rating}`;
+
+    box.append(image,name,price,rating,addtocart);
+    productList.append(box);
+})
+
+</script>
+</html>

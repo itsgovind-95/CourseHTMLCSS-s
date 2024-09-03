@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction: row; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+            /* flex-direction: row-reverse; */
+            /* flex-wrap: wrap; */
+            /* justify-content: baseline; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* align-items: center; */
+            /* align-items: baseline; */
+            /* align-items: flex-start; */
+            border: 1px double red;
+            width: 50%;
+            height: auto;
+            
+        }
+
+        .container div {
+            border: 1px solid teal;
+            width: 100px;
+            height: 100px;
+        }
+        .container :nth-child(even){
+            background-color: teal;
+            color: whitesmoke;
+            /* flex-grow: 2; */
+            /* flex-shrink: 5; */
+            /* flex: 2 3 100px; */
+        }
+        .container :nth-child(odd){
+            background-color: darkgray;
+            /* flex-grow: 1; */
+            /* flex-shrink: 5; */
+        }
+        .childcont {
+            /* flex-basis: 100px; */
+            
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childcont">1</div>
+        <div class="childcont">2</div>
+        <div class="childcont">3</div>
+        <div class="childcont">4</div>
+        <div class="childcont">5</div>
+        <div class="childcont">6</div>
+        <div class="childcont">7</div>
+        <div class="childcont">8</div>
+        <div class="childcont">9</div>
+        <div class="childcont">10</div>
+        <!-- <div class="childcont">11</div>
+        <div class="childcont">12</div>
+        <div class="childcont">13</div>
+        <div class="childcont">14</div>
+        <div class="childcont">15</div>
+        <div class="childcont">16</div>
+        <div class="childcont">17</div>
+        <div class="childcont">18</div>
+        <div class="childcont">19</div>
+        <div class="childcont">20</div> -->
+    </div>
+</body>
+<script></script>
+</html>
